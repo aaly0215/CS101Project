@@ -17,6 +17,7 @@ class Board:
 
 
 
+
 board1 = Board()
 board1.show_playboard()
 
