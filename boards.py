@@ -1,19 +1,29 @@
+import random
+
 class Board:
     #class veri to lock in board size
     row = 9
     column = 10
+    new_board = []
         
-    def __init__(self) -> None:
-        pass
+    def __init__(self, column = column, row = row) -> None:
+        #automatically create new board with list comprehension
+        self.board = [['O' for x in range(column)] for x in range(row)]
 
-    def make_board(self, row = row, column = column) -> None:
-        print('    [A] [B] [C] [D] [E] [F] [G] [H] [I] [J]')
-        vert = 1
-        for x in range(row):
-            print(f'[{vert}] ' + '|  |' * column)
-            vert += 1
+    def show_playboard(self) -> None:
+        for b in self.board:
+            print(*b)
+
+
+
+
 board1 = Board()
-board1.make_board()
+board1.show_playboard()
+
+
+
+
+    
 
 
         
@@ -21,4 +31,4 @@ board1.make_board()
 
 
 
-        
+       
