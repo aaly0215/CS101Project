@@ -12,7 +12,6 @@ for amt in range(amt_ships):
 
 #gameloop
 while board1.hits < len(board1.coordinates) and turns > 0:
-    print(board1.coordinates)
     board1.show_playboard()
     print(f'You have {turns} turns left.')
     board1.shoot()

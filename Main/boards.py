@@ -36,6 +36,7 @@ class Board:
         boat_direction = random.choice(['horizontal', 'vertical'])
         if boat_direction == 'horizontal':
             if boat_size + col_choice <= row:
+                print(f'There is a boat that is {boat_size} spaces long.')
                 counter = 0            
                 for x in range(int(boat_size)):   
                     self.coordinates.append([int(row_choice)- 1, int(col_choice) - 1 + counter])             
@@ -48,6 +49,7 @@ class Board:
         
         elif boat_direction == 'vertical':
             if boat_size + row_choice <= column:
+                print(f'There is a boat that is {boat_size} spaces long.')
                 counter2 = 0                
                 for x in range(int(boat_size)):
                     self.coordinates.append([int(row_choice )- 1 + counter2, int(col_choice) - 1])
