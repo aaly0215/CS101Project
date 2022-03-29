@@ -58,15 +58,24 @@ class Board:
                     self.place_boat()
 
     def shoot(self) -> None:
-        x = pick_int('Pick a row ')
-        y = pick_int('Pick a column ')
-        shot_coordinates = [x - 1, y - 1]
-        if shot_coordinates in self.coordinates:
-            print('You hit my ship!')
-            self.board[x - 1][y - 1] = '*'
-        else:
-            print('You missed!')
-            self.board[x - 1][y - 1] = 'X'
+        while True:
+            try:
+                x = pick_int('Pick a row ')
+                y = pick_int('Pick a column ')
+                shot_coordinates = [x - 1, y - 1]
+                if shot_coordinates in self.coordinates:
+                    print('You hit my ship!')
+                    self.board[x - 1][y - 1] = '*'
+                    break
+                else:
+                    print('You missed!')
+                    self.board[x - 1][y - 1] = 'X'
+                    break
+            except IndexError:
+                print('You missed the ocean! ')
 
     def count_hits(self) -> None:
-        pass
+        hit_count = 0
+        for hit_list in self.board:
+            hit_count += hit_list.count('*')
+        return hit_count
